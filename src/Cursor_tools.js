@@ -1,3 +1,6 @@
+
+class Cursor_tools {
+
 // Finding Velocity & Accleration JS Only 
 
 //Global Variables
@@ -59,5 +62,4 @@ let acceleration = null;
       let acceleration = calculateAcceleration(velocity);
       document.getElementById("acceleration").innerText = acceleration;
     });
-
-}
+  }
