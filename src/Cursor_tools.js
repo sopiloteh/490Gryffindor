@@ -13,9 +13,22 @@ let currentTime = null;
 let previousVelocity = null;
 let previousTime = null;
 let acceleration = null;
+let coordinates = [];
     
+    //Mouse Clicks Coordinates 
+    document.addEventListener("click", clickCoordinates)
+    function clickCoordinates(e) {
+      let MouseX = e.clientX;
+      let MouseY = e.clientY;
+      let temp = [];
+      temp.push(MouseX, MouseY);
+      coordinates.unshift(temp);
+      document.getElementById("XY").innerText=coordinates;
+      return coordinates; //returns an array of array coordinates
+    }
+
     //Mouse Velocity
-    function printMousePos(event) {
+    function calculateVelocity(event) {
       currentMouseX = event.pageX;
       currentMouseY = event.pageY;
       let movementX = Math.abs(currentMouseX - startMouseX);
