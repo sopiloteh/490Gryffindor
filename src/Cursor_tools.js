@@ -14,6 +14,7 @@ let previousVelocity = null;
 let previousTime = null;
 let acceleration = null;
 let coordinates = [];
+let clicks = null;
     
     //Mouse Clicks Coordinates 
     document.addEventListener("click", clickCoordinates)
@@ -23,8 +24,15 @@ let coordinates = [];
       let temp = [];
       temp.push(MouseX, MouseY);
       coordinates.unshift(temp);
-      document.getElementById("XY").innerText=coordinates;
+      document.getElementById("coordinates").innerText=coordinates;
+      ClickCounter();
       return coordinates; //returns an array of array coordinates
+    }
+    //Click Counter
+    function ClickCounter() {
+      clicks+=1;
+      document.getElementById("clicks").innerText=clicks;
+      return clicks;
     }
 
     //Mouse Velocity
