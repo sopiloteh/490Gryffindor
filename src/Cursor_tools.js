@@ -13,47 +13,35 @@ let currentTime = null;
 let previousVelocity = null;
 let previousTime = null;
 let acceleration = null;
-let coordinates = [];
-let clicks = null;
-    
-    //Mouse Clicks Coordinates 
-    document.addEventListener("click", clickCoordinates)
-    function clickCoordinates(e) {
-      let MouseX = e.clientX;
-      let MouseY = e.clientY;
-      let temp = [];
-      temp.push(MouseX, MouseY);
-      coordinates.unshift(temp);
-      document.getElementById("coordinates").innerText=coordinates;
-      ClickCounter();
-      return coordinates; //returns an array of array coordinates
-    }
-    //Click Counter
-    function ClickCounter() {
-      clicks+=1;
-      document.getElementById("clicks").innerText=clicks;
-      return clicks;
+let mousedata = []; 
+
+    //Mouse Movement Coordinates 
+    function MouseMovement(event) {
+      currentTime = Date.now();
+      currentMouseX = event.pageX;
+      currentMouseY = event.pageY;
+     
+      mousedata = [currentMouseX, currentMouseY, currentTime];
+      return mousedata;
     }
 
     //Mouse Velocity
     function calculateVelocity(event) {
-      currentMouseX = event.pageX;
-      currentMouseY = event.pageY;
-      let movementX = Math.abs(currentMouseX - startMouseX);
-      let movementY = Math.abs(currentMouseY - startMouseY);
-      currentTime = Date.now();
+      let data = MouseMovement();
+      let movementX = Math.abs(data[0] - startMouseX);
+      let movementY = Math.abs(data[1] - startMouseY);
       let distance = null;
       let velocity = null;
       let timeDifference = null;
       if (startMouseX && startMouseY && startTime) {
         distance = Math.sqrt(movementX * movementX + movementY * movementY);
-        timeDifference = currentTime - startTime;
+        timeDifference = data - startTime;
         velocity = Math.round(distance / timeDifference * 1000);
     
       }
-      startMouseX = currentMouseX;
-      startMouseY = currentMouseY; 
-      startTime = currentTime;
+      startMouseX = data[0];
+      startMouseY = data[1]; 
+      startTime = data[2];
       //console.log(`Our start coordinates: (${startMouseX}, ${startMouseY})`)
       //console.log(`Our current coordinates: (${currentMouseX}, ${currentMouseY})`)
       //console.log(`The velocity is ${velocity}`)
@@ -79,10 +67,11 @@ let clicks = null;
        *  multiple functions. The more you learn with javascript! -Erick
        */
       document.addEventListener('mousemove', function(event) {
-      let velocity = printMousePos(event);
-      let acceleration = calculateAcceleration(velocity);
-      document.getElementById("acceleration").innerText = acceleration;
-    });
+        let mousedata = MouseMovement(event);
+        let velocity = printMousePos();
+        let acceleration = calculateAcceleration(velocity);
+        document.getElementById("acceleration").innerText = acceleration;
+      });
   }
 
 //*....................................................................*
