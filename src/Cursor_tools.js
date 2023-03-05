@@ -59,7 +59,7 @@ class Cursor_tools {
     let finalTime = finalVelocity.time_delta;
     let velocityDifference = finalVelocity.velocity - startVelocity.velocity;
     let timeDifference = (finalTime - startTime);
-    acceleration = Math.round(velocityDifference / timeDifference);
+    let acceleration = Math.round(velocityDifference / timeDifference);
     return acceleration;
   }
 
