@@ -5,7 +5,7 @@ class Cursor_tools {
   //Global Variables
   static coordArray = [];
   static accelerationsArray = [];
-static count = 0;
+
 
   //Mouse Movement Coordinates 
   /**
@@ -115,20 +115,9 @@ static count = 0;
       this.coordArray.push(mousedata);
     }
   }
-
-  static mouseclick(event){
-
-let count =0;
-count = count+1;
-console.log(count)
-
-  }
 }
 
 //*....................................................................*
 document.addEventListener('mousemove', function (event) {
   Cursor_tools.handleMouseData(Cursor_tools.MouseMovement(event));
-});
-document.addEventListener('click', function(event){
-Cursor_tools.mouseclick(event);
 });
