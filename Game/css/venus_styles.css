@@ -1,0 +1,16 @@
+@import "reset.css";
+
+#venus .venus_box {
+  color: #fff;
+  text-transform: lowercase;
+  font: 20px/40px 'Neuton', georgia, serif;
+  height: 20px;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 0px;
+  position: fixed;
+  right: 50px;
+  top: 100px;
+  background-color: rgba(125, 121, 121, 0.5);
+  z-index: 9999;
+}
