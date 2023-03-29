@@ -1,6 +1,6 @@
 @import "reset.css";
 
-#venus .venus_box {
+.venus #venus_box {
   color: #fff;
   text-transform: lowercase;
   font: 20px/40px 'Neuton', georgia, serif;
