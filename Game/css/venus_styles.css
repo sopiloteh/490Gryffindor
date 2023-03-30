@@ -3,9 +3,9 @@
 .venus #venus_box {
   color: #fff;
   text-transform: lowercase;
-  font: 20px/40px 'Neuton', georgia, serif;
-  height: 20px;
-  padding: 10px;
+  font: 15px 'Neuton', georgia, serif;
+  height: 15px;
+  padding: 5px;
   border: 1px solid white;
   border-radius: 0px;
   position: fixed;
