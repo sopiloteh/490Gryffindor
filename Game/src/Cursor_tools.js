@@ -1,4 +1,3 @@
-
 class Cursor_tools {
 
   // Finding Velocity & Accleration JS Only 
@@ -126,8 +125,14 @@ console.log(counter);
 
 if (counter > 20)
 {
- 
+ document.getElementById("ask").style.display='block';
 this.count = 0;
+}
+
+else
+{
+  document.getElementById("ask").style.display='None';
+
 }
 
  } //end of mouseclick()
@@ -144,11 +149,3 @@ document.addEventListener('click', function (event) {
   Cursor_tools.mouseclick();
  
 });
-
-
-
-
-//js
-
-
-

@@ -1,0 +1,44 @@
+@import "reset.css";
+
+.venus #venus_box {
+  color: #fff;
+  text-transform: lowercase;
+  font: 15px 'Neuton', georgia, serif;
+  height: 15px;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 0px;
+  position: fixed;
+  right: 50px;
+  top: 100px;
+  background-color: rgba(125, 121, 121, 0.5);
+  z-index: 9999;
+}
+.askuser #ask_box {
+  color: white;
+  text-transform: lowercase;
+  font: 15px 'Neuton', georgia, serif;
+  height: 100px;
+  width: 300px;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 0px;
+   position: fixed; /*<!--need to have this to appear--> */
+  left: 40%;
+  top: 200px;
+  background-color: rgba(125, 121, 121, 0.5);
+text-align: center;
+ z-index: 9989;
+ 
+}
+
+#ask_box button.yes{
+  position:absolute;
+  bottom: 0;
+  left:50%;
+}
+#ask_box button.no{
+  position:absolute;
+  bottom: 0;
+  right:50%;
+}
