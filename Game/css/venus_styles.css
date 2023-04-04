@@ -1,19 +1,53 @@
 @import "reset.css";
 
-.venus #venus_box {
+.venus #venus_box { 
+  background-color: #0000008d;
   color: #fff;
-  text-transform: lowercase;
+  /* text-transform: lowercase; */
   font: 15px 'Neuton', georgia, serif;
-  height: 15px;
-  padding: 5px;
-  border: 1px solid white;
-  border-radius: 0px;
-  position: fixed;
-  right: 50px;
+  padding: 0px 5px;
+  /* border: none; */
+  border: 5px;
+  border-radius: 2px;
+  position: absolute;
+  left: 30px;
   top: 100px;
-  background-color: rgba(125, 121, 121, 0.5);
-  z-index: 9999;
+  cursor: pointer;
+  z-index: 9998;
 }
+#venus_box .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+#venus_box .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.315);
+  min-width: 160px;
+  z-index: 9998;
+}
+
+#venus_box .dropdown-content a {
+  color: rgb(255, 255, 255);
+  padding: 12px 5px;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 2px;
+  display: block;
+}
+
+#venus_box  .dropdown-content a:hover {
+  background-color:  rgba(153, 150, 150, 0.5);
+}
+
+#venus_box  .dropdown:hover .dropdown-content {
+  display: block;
+}
+#venus_box .dropdown:hover .venus {
+  background-color:  rgba(153, 150, 150, 0.5);
+}
+
 .askuser #ask_box {
   color: white;
   text-transform: lowercase;
