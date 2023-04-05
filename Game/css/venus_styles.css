@@ -47,8 +47,9 @@
 #venus_box .dropdown:hover .venus {
   background-color:  rgba(153, 150, 150, 0.5);
 }
-
-.askuser #ask_box {
+.popup { display: none; }
+.popup.open { display: block; }
+.popup .contents {
   color: white;
   text-transform: lowercase;
   font: 15px 'Neuton', georgia, serif;

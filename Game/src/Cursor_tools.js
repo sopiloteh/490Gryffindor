@@ -119,24 +119,27 @@ class Cursor_tools {
 
 
 static mouseclick(){
-  
+  const popup = document.querySelector('.popup');
+  const yes = document.getElementById('yes');
+  const no = document.getElementById('no');
+
 let counter = ++this.count;
 console.log(counter);
 
 if (counter > 20)
 {
- document.getElementById("ask").style.display='block';
+  popup.classList.add('open');
+  
 this.count = 0;
 }
+document.getElementById ("yes").addEventListener ("click", myFunction, false);
+document.getElementById ("no").addEventListener ("click", myFunction, false);
 
-else
-{
-  document.getElementById("ask").style.display='None';
-
+function myFunction() {
+  popup.classList.remove('open');
 }
 
- } //end of mouseclick()
-
+}
 
 }
 
