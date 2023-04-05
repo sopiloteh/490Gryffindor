@@ -46,4 +46,5 @@ text-align: center;
 #ask_box button.x{
   position:absolute;
   font-size:25px;
+  right: 100px;
  }
