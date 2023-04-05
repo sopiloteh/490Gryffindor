@@ -42,3 +42,8 @@ text-align: center;
   bottom: 0;
   right:50%;
 }
+
+#ask_box button.x{
+  position:absolute;
+  font-size:25px;
+ }
