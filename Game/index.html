@@ -113,8 +113,22 @@
   <div class="venus">
     <div id="venus_box">
       <p>This is a box. Jira Ticket: Ven-62.</p>
+<<<<<<< Updated upstream
+=======
+      <div class="dropdown">
+        <div class="venus_box">Venus Menu</div>
+        <div class="dropdown-content">
+          <a href="#">Turn Venus On/Off</a>
+          <a href="#">Clear Data</a>
+          <a href="#">Readability</a>
+          <a href="#">Reset Screen</a>
+        </div>
+      </div>
+>>>>>>> Stashed changes
     </div>
+    <button id="toggleBtn">On</button>
   </div>
+<<<<<<< Updated upstream
 
   <button id="toggleBtn">On</button>
   <script>
@@ -152,6 +166,35 @@
     <p>Learn more about the game on <a target="_blank" href="http://github.com/arturkot/the-house-game">Github</a></p>
   </div>
 
+=======
+  
+  <script>
+    // Get the button element
+    var toggleBtn = document.getElementById("toggleBtn");
+    // Get the venus_box element
+    var venusBox = document.getElementById("venus_box");
+    // Set the initial visibility of the box to visible
+    venusBox.style.display = "block";
+    // Set a variable to hold the timer ID
+    var timerId;
+    // Add a click event listener to the button
+    toggleBtn.addEventListener("click", function() {
+      // If the button is turned on, start the timer to hide the box after 5 seconds
+      if (toggleBtn.innerHTML === "On") {
+        toggleBtn.innerHTML = "Off";
+        timerId = setTimeout(function() {
+          venusBox.style.display = "none";
+        }, 5000);
+      } // If the button is turned off, clear the timer and show the box
+      else {
+        toggleBtn.innerHTML = "On";
+        clearTimeout(timerId);
+        venusBox.style.display = "block";
+      }
+    });
+  </script>
+  
+>>>>>>> Stashed changes
 
   <script>
     //clear
