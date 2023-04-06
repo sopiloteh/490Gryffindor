@@ -6,6 +6,8 @@ class Cursor_tools {
   static coordArray = [];
   static accelerationsArray = [];
 
+  static count = 0;
+
 
   //Mouse Movement Coordinates 
   /**
@@ -115,9 +117,39 @@ class Cursor_tools {
       this.coordArray.push(mousedata);
     }
   }
+
+
+static mouseclick(){
+  const popup = document.querySelector('.popup');
+  const yes = document.getElementById('yes');
+  const no = document.getElementById('no');
+
+let counter = ++this.count;
+console.log(counter);
+
+if (counter > 20)
+{
+  popup.classList.add('open');
+  
+this.count = 0;
+}
+document.getElementById ("yes").addEventListener ("click", myFunction, false);
+document.getElementById ("no").addEventListener ("click", myFunction, false);
+
+function myFunction() {
+  popup.classList.remove('open');
+}
+
+}
+
 }
 
 //*....................................................................*
 document.addEventListener('mousemove', function (event) {
   Cursor_tools.handleMouseData(Cursor_tools.MouseMovement(event));
+});
+document.addEventListener('click', function (event) {
+
+  Cursor_tools.mouseclick();
+ 
 });
