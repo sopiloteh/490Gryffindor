@@ -112,9 +112,8 @@
   <!-- Venus HTML stuff below -->
   <div class="venus">
     <div id="venus_box">
-      <p>This is a box. Jira Ticket: Ven-62.</p>
       <div class="dropdown">
-        <div class="venus_box">Venus Menu</div>
+        <div class="venus_box">?</div>
         <div class="dropdown-content">
           <a href="#">Turn Venus On/Off</a>
           <a href="#">Clear Data</a>
@@ -125,16 +124,29 @@
     </div>
     <button id="toggleBtn">On</button>
   </div>
-  
+ 
 
-<!-- Venus HTML stuff above -->
 
+
+  <script type="text/javascript" src="/Game/src/Cursor_tools.js"></script>
+  <div class="askuser" onclick="mouseclick();"></div>
+  <div class="popup">
+    <div class="contents" >
+      Do you need help?
+      <button id="yes">Yes</button>
+      <button id="no">No</button>
+      
+    </div>
+    
+  </div> 
+ 
   <div id="author">
     <div class="btn">i</div>
     <p>Game made by <a target="_blank" href="http://arturkot.pl">Artur Kot</a></p>
     <p>Follow me on <a target="_blank" href="http://twitter.com/arturkot">Twitter</a></p>
     <p>Learn more about the game on <a target="_blank" href="http://github.com/arturkot/the-house-game">Github</a></p>
   </div>
+ 
 
   
   <script>
@@ -163,6 +175,8 @@
     });
   </script>
   
+
+</div>
 
   <script>
     //clear
