@@ -112,3 +112,11 @@ padding: 10px;
 	50% { transform: translate(0, 15px); }
 	100% { transform: translate(0, -0px); }
 }
+
+#venus_box.active {
+  background-color: #ffbe00;
+}
+
+#venus_box.sleep {
+  background-color: #4d4d4d;
+}
