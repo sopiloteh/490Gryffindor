@@ -10,17 +10,25 @@ document.addEventListener('mousemove', function (event) {
   console.log("Is abnormalAcceleration? " + test.abnormalAcceleration);
 });
 
+// Set initial state to "On"
+let isVenusOn = true;
+
+// Get references to Venus box and toggle button
+var venusBox = document.getElementById('venus_box');
+var toggleBtn = document.getElementById('toggleBtn');
+
 function toggleVenus() {
-  var venusBox = document.getElementById("venus_box");
-  var toggleBtn = document.getElementById("toggleBtn");
-  
-  if (venusBox.classList.contains("sleep")) {
-    venusBox.classList.remove("sleep");
-    venusBox.classList.add("active");
-    toggleBtn.textContent = "Off";
+  // Toggle state
+  isVenusOn = !isVenusOn;
+
+  // Change button text and Venus box visibility accordingly
+  if (isVenusOn) {
+    toggleBtn.textContent = 'On';
+    venusBox.style.display = 'block';
+    console.log("Venus button on");
   } else {
-    venusBox.classList.remove("active");
-    venusBox.classList.add("sleep");
-    toggleBtn.textContent = "On";
+    toggleBtn.textContent = 'Sleep';
+    venusBox.style.display = 'block';
+    console.log("sleeeppy Venus");
   }
 }
