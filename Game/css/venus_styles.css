@@ -1,17 +1,23 @@
-@import "reset.css";
+ @import "reset.css";
 
 .venus #venus_box { 
   background-color: #0000008d;
-  color: #fff;
   font: 15px 'Neuton', georgia, serif;
   padding: 0px 5px;
   border: 5px;
   border-radius: 2px;
   position: absolute;
-  left: 30px;
-  top: 100px;
+  
   cursor: pointer;
-  z-index: 9998;
+  animation-name: floating;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+    font-size: 50px;
+    color: white;
+    z-index: 9999;
+    right: 160px;
+    top: 20px;
 }
 
 #venus_box .dropdown {
@@ -33,6 +39,7 @@
   text-decoration: none;
   border: 1px solid white;
   border-radius: 2px;
+  font-size: 20px;
   display: block;
 }
 
@@ -47,15 +54,8 @@
 #venus_box .dropdown:hover .venus {
   background-color: rgba(153, 150, 150, 0.5);
 }
-
-.popup {
-  display: none;
-}
-
-.popup.open {
-  display: block;
-}
-
+.popup { display: none; }
+.popup.open { display: block; }
 .popup .contents {
   color: white;
   text-transform: lowercase;
@@ -73,7 +73,9 @@
   z-index: 9989;
 }
 
+
 .box { 
+  
   position: absolute;
   height: 100px; 
   width: 100px;
@@ -96,3 +98,17 @@
   z-index: 9999;
   right: 20px;
   top: 20px;
+
+padding: 10px;
+  right: 20px;
+    top: 20px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+
+@keyframes floating {
+	0% { transform: translate(0, 0px); }
+	50% { transform: translate(0, 15px); }
+	100% { transform: translate(0, -0px); }
+}
