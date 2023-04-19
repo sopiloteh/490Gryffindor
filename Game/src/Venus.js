@@ -34,6 +34,9 @@ function toggleVenus() {
   }
 }
 
+//list of the tiles associated with player when item is picked up: note, twig, key, coal
+const target_item = ['10-8', '3-3', '18-5', '7-8'];
+
 function hintSystem() {
   var curr_inventory = $.jStorage.get('collected');
   var items_used = $.jStorage.get('used');
