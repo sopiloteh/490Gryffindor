@@ -159,12 +159,8 @@ function myFunction() {
 
 
 //*....................................................................*
-document.addEventListener('mousemove', function (event) {
-  Cursor_tools.handleMouseData(Cursor_tools.MouseMovement(event));
-});
-document.addEventListener('click', function (event) {
 
+document.addEventListener('click', function (event) {
   Cursor_tools.mouseclick();
- 
 });
 
