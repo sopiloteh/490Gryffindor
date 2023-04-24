@@ -1,4 +1,12 @@
 
+//Function that gets the players' X,Y positions and the room they are current in.
+function getPlayerPos() {
+  var x = $('#player').attr('data-x');
+  var y = $('#player').attr('data-y');
+  var room = $.jStorage.get('is_in');
+}
+
+
 const test = new Cursor_tools();
 document.addEventListener('mousemove', function (event) {
   test.handleMouseData(test.MouseMovement(event));
@@ -7,7 +15,7 @@ document.addEventListener('mousemove', function (event) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
   sleep(50);
-  console.log("Is abnormalAcceleration? " + test.abnormalAcceleration);
+  console.lo
   //if (test.abnormalAcceleration == true) { hintSystem() } 
 });
 
@@ -41,3 +49,6 @@ function hintSystem() {
   var curr_inventory = $.jStorage.get('collected');
   var items_used = $.jStorage.get('used');
 }
+
+});
+
