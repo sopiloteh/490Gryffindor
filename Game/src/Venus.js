@@ -20,7 +20,7 @@ document.addEventListener('mousemove', function (event) {
 
   console.log("Is abnormalAcceleration? " + test.abnormalAcceleration);
 
-  console.lo
+  console.log("etc");
   //if (test.abnormalAcceleration == true) { hintSystem() } 
 
 });
@@ -115,6 +115,6 @@ function hintSystem() {
   var items_used = $.jStorage.get('used');
 }
 
-});
+//});
 
 
