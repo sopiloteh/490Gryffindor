@@ -1,3 +1,14 @@
+
+
+//Function that gets the players' X,Y positions and the room they are current in.
+function getPlayerPos() {
+  var x = $('#player').attr('data-x');
+  var y = $('#player').attr('data-y');
+  var room = $.jStorage.get('is_in');
+}
+
+
+
 const test = new Cursor_tools();
 document.addEventListener('mousemove', function (event) {
   test.handleMouseData(test.MouseMovement(event));
@@ -6,21 +17,30 @@ document.addEventListener('mousemove', function (event) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
   sleep(50);
+
   console.log("Is abnormalAcceleration? " + test.abnormalAcceleration);
+
+  console.lo
+  //if (test.abnormalAcceleration == true) { hintSystem() } 
+
 });
 
 // Set initial state to "On"
 let isVenusOn = true;
+
 let isClearOn = false;
 let isReadOn = false;
 let isResetOn = false;
+
 
 // Get references to Venus box and toggle button
 var venusBox = document.getElementById('venus_box');
 var toggleBtn = document.getElementById('toggleBtn');
 
+
 // Set initial reading size to "small"
 let readingSize = 'small';
+
 
 function toggleVenus() {
   // Toggle state
@@ -37,6 +57,7 @@ function toggleVenus() {
     console.log("sleeeppy Venus");
   }
 }
+
 
 function toggleClear(){
   isClearOn = !isClearOn;
@@ -85,3 +106,15 @@ function toggleReset(){
     console.log("Screen is default");    
   }
 }
+
+//list of the tiles associated with player when item is picked up: note, twig, key, coal
+const target_item = ['10-8', '3-3', '18-5', '7-8'];
+
+function hintSystem() {
+  var curr_inventory = $.jStorage.get('collected');
+  var items_used = $.jStorage.get('used');
+}
+
+});
+
+

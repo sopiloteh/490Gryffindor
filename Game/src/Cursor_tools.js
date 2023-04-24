@@ -161,6 +161,9 @@ function myFunction() {
 //*....................................................................*
 
 document.addEventListener('click', function (event) {
+
+
+document.addEventListener('click', function (event) {
   Cursor_tools.mouseclick();
 });
 
