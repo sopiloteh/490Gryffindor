@@ -21,7 +21,7 @@ document.addEventListener('mousemove', function (event) {
   console.log("Is abnormalAcceleration? " + test.abnormalAcceleration);
 
   console.log("etc");
-  //if (test.abnormalAcceleration == true) { hintSystem() } 
+  if (test.abnormalAcceleration == true) { hintSystem() } 
 
 });
 
@@ -113,6 +113,37 @@ const target_item = ['10-8', '3-3', '18-5', '7-8'];
 function hintSystem() {
   var curr_inventory = $.jStorage.get('collected');
   var items_used = $.jStorage.get('used');
+  var progress = $.jStorage.get('played');
+  //hint player to key
+  if(($.inArray("scene_corridor", progress) === -1) && ($.inArray("key", curr_inventory) === -1 )) {
+    console.log("Player missing key in aquarium scene");
+  }
+  //hint player to note, if burnt note then restart
+  else if($.inArray("scene_keypad", progress) === -1) {
+    if($.inArray("note", curr_inventory) === -1 ) { 
+      console.log("Player missing note in big room");
+    } else if ($.inArray("note", items_used)) {
+      console.log("Maybe the note was important");
+    }
+  }
+  //hint player to the either of the three missing items
+  else if($.inArray("scene_furnace", progress) === -1){
+    if($.inArray("note", curr_inventory) === -1) {
+      console.log("Player missing note");
+    } else if($.inArray("twig", curr_inventory) === -1) {
+      console.log("Player missing twig in painting");
+    } else if($.inArray("coal", curr_inventory) === -1) {
+      console.log("Player missing coal");
+    }
+  }
+  //hint player to go down stairs
+  else if($.inArray("scene_void_shower", progress) === -1) {
+    console.log("Player go down stairs");
+  }
+  //hint player to go back to painting 
+  else if($.inArray("scene_unite", progress) === -1) {
+    console.log("Player go back to painting");
+  }
 }
 
 //});
